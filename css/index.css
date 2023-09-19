@@ -1,0 +1,17 @@
+html {
+  font-size: 10px;
+}
+
+.main-canvas {
+  display: block;
+  margin: 10rem auto;
+  border: 1px solid black;
+}
+
+.myh {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  font-size: 10rem;
+  background-color: aquamarine;
+}/*# sourceMappingURL=index.css.map */
