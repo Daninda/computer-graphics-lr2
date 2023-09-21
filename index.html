@@ -7,11 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="fractal" class="main-canvas">
-
-    </canvas>
-    <h1 class="myh">123</h1>
-
+    <div class="slider-wrapper">
+        <canvas id="fractal" class="main-canvas"></canvas>
+        <input type="range" min="1" max="100" value="50" class="slider-vertic" id="vertic">
+        <input type="range" min="1" max="100" value="50" class="slider-horiz" id="horiz">
+    </div>
+    <h1 class="title">Масштаб:</h1>
+    <input type="range" min="1" max="100" value="1" class="slider" id="scale">
+    <h1 class="title">Введите N:</h1>
+    <input type="number" class="input-N">
+    <button class="btn" id="btn-succes">Success</button>
     <script src="fractal.js"></script>
 </body>
 </html>
