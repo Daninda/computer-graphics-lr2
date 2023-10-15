@@ -4,7 +4,7 @@ const minX = -1;
 const maxX = 1;
 const minY = -1;
 const maxY = 1;
-const maxN = 100;
+var maxN = 100;
 const maxZ = 2;
 const cX = 0.55;
 const cY = 0.55;
@@ -31,13 +31,25 @@ horiz.oninput = function() {
     setPixels();
 }
 
-slider.value = 1;
-vertic.value = 50;
-horiz.value = 50;
+var input_n = document.getElementById('input-n');
 
-var button = document.getElementById('btn-succes');
-button.onclick = function() {
-    
+var success_btn = document.getElementById('success-btn');
+success_btn.onclick = function() {
+    maxN = input_n.value;
+    setPixels();
+}
+
+var default_btn = document.getElementById('default-btn');
+default_btn.onclick = function() {
+    maxN = 100;
+    slider.value = 1;
+    vertic.value = 50;
+    horiz.value = 50;
+    input_n.value = maxN;
+    windoww = (1 - slider.value / 100) * (maxX - minX);
+    v = (vertic.value / 100) * (maxY - minY) + minY;
+    h = (horiz.value / 100) * (maxX - minX) + minX;
+    setPixels();
 }
 
 var canvas = document.getElementById('fractal');
@@ -45,7 +57,7 @@ canvas.width = width;
 canvas.height = height;
 var ctx = canvas.getContext('2d');
 
-setPixels();
+default_btn.click();
 
 var i, j, n, x, y, dx, dy;
 function setPixels () {
